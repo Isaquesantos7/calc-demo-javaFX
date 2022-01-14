@@ -1,11 +1,17 @@
 package gui;
 
+import java.net.URL;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import gui.util.Contraints;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class ViewController {
+public class ViewController implements Initializable{
 	@FXML 
 	private TextField txtNumberOne;
 	
@@ -20,6 +26,7 @@ public class ViewController {
 	
 	@FXML
 	public void onBtnClickAction() {
+		Locale.setDefault(Locale.US);
 		try {
 			double insertOne = Double.parseDouble(txtNumberOne.getText());
 			double insertSecond = Double.parseDouble(txtNumberTwo.getText());
@@ -29,5 +36,18 @@ public class ViewController {
 		catch(NumberFormatException e) {
 			System.out.println("Error: " + e.getMessage());
 		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		Contraints.setTextFildeMaxLength(txtNumberOne, 11);
+		Contraints.setTextFildeMaxLength(txtNumberTwo, 11);
+		Contraints.setTextFieldInteger(txtNumberOne);
+		Contraints.setTextFieldInteger(txtNumberTwo);
+		
+		/*
+		Contraints.setTextFieldDouble(txtNumberOne);
+		Contraints.setTextFieldDouble(txtNumberTwo);
+		*/
 	}
 }
