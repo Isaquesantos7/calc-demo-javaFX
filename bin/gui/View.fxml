@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
    <children>
       <Label layoutX="37.0" layoutY="33.0" text="Calculate SUM" textFill="#000000d4">
          <font>
@@ -15,9 +14,9 @@
          </font>
       </Label>
       <Label layoutX="23.0" layoutY="257.0" text="Resut = " />
-      <Label layoutX="82.0" layoutY="257.0" />
-      <TextField layoutX="22.0" layoutY="80.0" />
-      <TextField layoutX="22.0" layoutY="138.0" />
-      <Button layoutX="25.0" layoutY="212.0" mnemonicParsing="false" text="Button" />
+      <Label fx:id="labelResult" layoutX="82.0" layoutY="257.0" />
+      <TextField fx:id="txtNumberOne" layoutX="22.0" layoutY="80.0" />
+      <TextField fx:id="txtNumberTwo" layoutX="22.0" layoutY="138.0" />
+      <Button fx:id="btnClick" layoutX="25.0" layoutY="212.0" mnemonicParsing="false" onAction="#onBtnClickAction" text="Button" />
    </children>
 </AnchorPane>
